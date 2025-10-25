@@ -1,8 +1,8 @@
-import "./env";
+import "env";
 
 import { join } from "node:path";
-import { logger } from "./utils/logging";
-import { tree, formatTree } from "./utils/tree";
+import { logger } from "utils/logging";
+import { tree, formatTree } from "utils/tree";
 import assert from "node:assert";
 
 const routes = await tree(import.meta.dirname, "app");

@@ -1,5 +1,5 @@
-import { OPENID_ISSUER_REL } from "./constants";
-import { env } from "./env";
+import { OPENID_ISSUER_REL } from "constant";
+import { env } from "env";
 
 const { OIDC_FQDN, OIDC_SUBJECT_EMAIL, COMMA_DELIMITED_APPLICATION_SLUGS } =
   env;
