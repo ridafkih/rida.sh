@@ -1,12 +1,23 @@
 {
   "name": "rida.sh",
-  "module": "index.ts",
+  "module": "src/index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun run --hot src/index.ts"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/signale": "^1.4.7"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "arkenv": "^0.7.3",
+    "arktype": "^2.1.23",
+    "chalk": "^5.6.2",
+    "signale": "^1.4.0"
   }
 }
