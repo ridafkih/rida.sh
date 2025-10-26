@@ -1,6 +1,6 @@
 # rida.sh
 
-This is a project which utilizes Cloudflare Tunnels and a Bun-hosted REST API to expose services & configurations that are used by internal systems. Particularly those hosted (on my homelab)[https://github.com/ridafkih/homelab].
+This is a project which utilizes Cloudflare Tunnels and a Bun-hosted REST API to expose services & configurations that are used by internal systems. Particularly those hosted [on my homelab](https://github.com/ridafkih/homelab).
 
 ## Prerequisites
 
