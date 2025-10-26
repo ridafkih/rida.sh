@@ -14,12 +14,12 @@ Bun.serve({
   error(error) {
     logger.error(error);
   },
-  async fetch(request) {
+  async fetch(request, server) {
     const { pathname } = new URL(request.url);
     const moduleRoute = routes[pathname];
 
     if (!moduleRoute) {
-      logger.debug("incoming request", pathname, "matched no module");
+      logger.debug("incoming request from", server.requestIP(request)?.address, "to", pathname, "matched no module");
       return new Response("Not Found", { status: 404 });
     }
 
