@@ -1,0 +1,24 @@
+services:
+  rida.sh-cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: rida.sh-cloudflared
+    restart: unless-stopped
+    command: tunnel run
+    networks:
+      - cloudflared-network
+    environment:
+      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN}
+
+  rida.sh-bun:
+    container_name: rida.sh-bun
+    build: .
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - cloudflared-network
+    env_file:
+      .env
+
+networks:
+  cloudflared-network:
+    driver: bridge
