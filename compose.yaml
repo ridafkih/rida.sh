@@ -8,6 +8,9 @@ services:
       - cloudflared-network
     environment:
       TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN}
+    dns:
+      - 1.1.1.1
+      - 1.0.0.1
 
   rida.sh-bun:
     container_name: rida.sh-bun
