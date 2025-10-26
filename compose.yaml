@@ -11,6 +11,7 @@ services:
 
   rida.sh-bun:
     container_name: rida.sh-bun
+    restart: unless-stopped
     build: .
     volumes:
       - .:/usr/src/app
