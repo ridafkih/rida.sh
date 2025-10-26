@@ -17,13 +17,14 @@ Bun.serve({
   async fetch(request, server) {
     const { pathname } = new URL(request.url);
     const moduleRoute = routes[pathname];
-
+    const ipAddress = server.requestIP(request)?.address;
+    
     if (!moduleRoute) {
-      logger.debug("incoming request from", server.requestIP(request)?.address, "to", pathname, "matched no module");
+      logger.debug("incoming request from", ipAddress, "to", pathname, "matched no module");
       return new Response("Not Found", { status: 404 });
     }
 
-    logger.debug("incoming request", pathname, "matched a module");
+    logger.debug("incoming request from", ipAddress, "to", pathname, "matched a module");
 
     const { default: execute } = await import(moduleRoute);
 
